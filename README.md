@@ -1,7 +1,11 @@
-# DIO - Trilha .NET - Programação orientada a objetos
-www.dio.me
+# Modificações Feitas
+- Completada a classe Smartphone com os parâmetros necessários pelo diagrama;
+- Feitas verificações para o número ter que ser do formato usado nos celulares (XX 9 XXXXXXXX);
+- Feitas verificações para a memória ter que ser no padrão usado nos celulares (16, 32, 64, 128, 256 GB);
+- Completadas as classes Nokia e Iphone, agora herdam da classe Smartphone e sobrescrevem seu método InstalarAplicativo;
+- Atualizada versão do .NET: 6.0 -> 8.0;
 
-## Desafio de projeto
+# Desafio de projeto
 Para este desafio, você precisará usar seus conhecimentos adquiridos no módulo de orientação a objetos, da trilha .NET da DIO.
 
 ## Contexto
