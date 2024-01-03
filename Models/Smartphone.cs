@@ -1,6 +1,10 @@
 namespace DesafioPOO.Models{
     public abstract class Smartphone{
         private string _numero;
+        private string _modelo;
+        private string _imei;
+        private int _memoria;
+
         public string numero { 
             get{ return _numero; }
             set{
@@ -8,29 +12,40 @@ namespace DesafioPOO.Models{
                     _numero = value;
                 }
                 else{
-                    throw new ArgumentException("O Número de telefone deve ser passado no formato DDD + 9 + Numero sem espços: XX9XXXXXXXX");
+                    Console.WriteLine("O Número de telefone deve ser passado no formato DDD + 9 + Numero sem espços: XX9XXXXXXXX");
                 }
             }
         }
 
-        private string modelo { get; set; }
+        private string modelo {
+            get { return _modelo; } 
+            set { _modelo = value; }
+        }
 
-        private string imei { get; set; }
+        private string imei {
+            get { return _imei; } 
+            set { _imei = value; }
+        }
 
-        private int memoria { get; set; }
+        private int memoria{
+            get { return _memoria; } 
+            set {
+                int[] valoresPermitidos = { 16, 32, 64, 128, 256 };
 
-        public Smartphone(string numero, string modelo, string imei, int memoria){
-            this.numero = numero;
-            this.modelo = modelo;
-            this.imei = imei;
-
-            int[] valoresPermitidos = { 16, 32, 64, 128, 256 };
-            if (!Array.Exists(valoresPermitidos, valorPassado => valorPassado == memoria)){
-                throw new ArgumentException("A memória deve ser um dos valores permitidos: 16, 32, 64, 128, 256.");
+                if(!Array.Exists(valoresPermitidos, valorPassado => valorPassado == value)){
+                    Console.WriteLine("A memória deve ser um dos valores permitidos: 16, 32, 64, 128, 256.");              
+                }
+                else{
+                    _memoria = value; 
+                }
             }
-            else{
-            this.memoria = memoria;
-            }
+        }
+
+        public Smartphone(string numeroCelular, string modeloCelular, string imeiCelular, int memoriaCelular){
+            numero = numeroCelular;
+            modelo = modeloCelular;
+            imei = imeiCelular;
+            memoria = memoriaCelular;
         }
 
         public void Ligar(){
